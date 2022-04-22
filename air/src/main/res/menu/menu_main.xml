@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.calendar_view.MainActivity">
+    <item
+        android:id="@+id/action_7days"
+        android:orderInCategory="100"
+        android:title="Last 7 days"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_14days"
+        android:orderInCategory="100"
+        android:title="Last 14 days"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_30days"
+        android:orderInCategory="100"
+        android:title="Last 30 days"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_60days"
+        android:orderInCategory="100"
+        android:title="Last 7 days"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Custom_date_range"
+        android:orderInCategory="100"
+        android:title="Custom date range"
+        app:showAsAction="never" />
+</menu>

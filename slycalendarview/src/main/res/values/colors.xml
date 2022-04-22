@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="slycalendar_defBackgroundColor">#ffffff</color>
+<!--    <color name="slycalendar_defHeaderColor">#2962ff</color>-->
+    <color name="slycalendar_defHeaderTextColor">#ffffff</color>
+    <color name="slycalendar_defTextColor">#333333</color>
+    <color name="slycalendar_defSelectedColor">#2962ff</color>
+    <color name="slycalendar_defSelectedTextColor">#ffffff</color>
+    <color name="calendar_color">#00838F</color>
+    <color name="calendar_color_dark">#006064</color>
+    <color name="save_and_cancel_button">#80DEEA</color>
+    <color name="day_month_date">#FFFFFF</color>
+    <color name="smtwtfs">#80DEEA</color>
+    <color name="slycalendar_defHeaderColor">#00838F</color>
+</resources>
