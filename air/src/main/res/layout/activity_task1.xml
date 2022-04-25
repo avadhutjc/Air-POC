@@ -91,6 +91,25 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/vertical_line" />
 
+        <View
+            android:id="@+id/g1"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image2"
+            android:layout_alignEnd="@id/grey88"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/vertical_line" />
+
+        <View
+            android:id="@+id/red1"
+            android:layout_width="33dp"
+            android:layout_height="10dp"
+            android:layout_below="@id/image2"
+            android:layout_alignStart="@+id/line_007"
+            android:layout_marginStart="0.6dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/red_color" />
+
 
 
     </RelativeLayout>
