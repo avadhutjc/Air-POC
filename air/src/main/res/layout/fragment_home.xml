@@ -1,92 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HomeFragment">
 
-    <RelativeLayout
-        android:id="@+id/top_a_regul"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/top_a_regul"
-        android:gravity="center"
-        tools:ignore="MissingConstraints">
+        android:layout_weight="1.4"
+        android:background="#00BCD4">
 
         <TextView
-            android:id="@+id/page_title"
+            android:id="@+id/tvTopHeader"
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
             android:fontFamily="@font/poppins_medium"
-            android:gravity="top"
-            android:lineSpacingExtra="-4sp"
-            android:text="@string/page_title"
+            android:padding="5dp"
+            android:text="Sushmita Kumar"
             android:textColor="@color/black"
-            android:textSize="19sp" />
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/vector"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_toEndOf="@id/page_title"
-            android:background="@drawable/people" />
-
-        <View
-            android:id="@+id/elements_av"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@id/vector"
-            android:background="@drawable/elements_av" />
-
-        <TextView
-            android:id="@+id/a"
+        <ImageButton
+            android:id="@+id/people_img_btn"
             android:layout_width="wrap_content"
-            android:layout_height="37dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="30dp"
-            android:fontFamily="@font/ab"
-            android:gravity="center"
-            android:text="a"
-            android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#00BCD4"
+            android:src="@drawable/people"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/switch_img_btn"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageButton
+            android:id="@+id/switch_img_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#00BCD4"
+            android:src="@drawable/switch_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:id="@+id/rel1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp">
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="15dp">
 
         <Button
+            android:id="@+id/btn_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rel1"
             android:layout_marginStart="10dp"
-            android:background="#00BCD4"
             android:layout_marginTop="10dp"
+            android:background="@drawable/btn_corner"
+            android:backgroundTint="#1976D2"
+            android:fontFamily="@font/poppins_medium"
             android:text="DETAILS"
-            tools:ignore="NotSibling" />
+            android:textColor="@color/black" />
 
+        <View
+            android:id="@+id/btn_calendar"
+            android:layout_width="205dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/input_field" />
 
+        <TextView
+            android:id="@+id/cal_text"
+            style="@style/textView"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/btn_detail"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="                     "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/cal_icon"
+            style="@style/textView"
+            android:layout_width="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/cal_text"
+            android:gravity="center"
+            android:padding="12dp"
+            app:drawableEndCompat="@drawable/calendar_today" />
+
+        <Spinner
+            android:id="@+id/spinners_show"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20sp"
+            android:dropDownWidth="400dp"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rel1">
+
+<!--        <com.github.mikephil.charting.charts.BarChart-->
+<!--            android:id="@+id/chart_in_home_frag"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_home_frag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
 

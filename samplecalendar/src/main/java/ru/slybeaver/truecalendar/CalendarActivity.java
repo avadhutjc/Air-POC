@@ -11,19 +11,19 @@ import java.util.Locale;
 
 import ru.slybeaver.slycalendarview.SlyCalendarDialog;
 
-public class MainActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
+public class CalendarActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.calendar_main);
         findViewById(R.id.btnShowCalendar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new SlyCalendarDialog()
                         .setSingle(false)
                         .setFirstMonday(false)
-                        .setCallback(MainActivity.this)
+                        .setCallback(CalendarActivity.this)
                         .show(getSupportFragmentManager(), "TAG_SLYCALENDAR");
             }
         });
