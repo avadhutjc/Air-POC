@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/action_bar_manage_users"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#00BCD4">
+
+        <ImageButton
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="0dp"
+            android:background="#00BCD4"
+            android:src="@drawable/clear_btn"
+            app:layout_constraintEnd_toStartOf="@id/tvUserList" />
+
+        <TextView
+            android:id="@+id/tvUserList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="35dp"
+            android:layout_toRightOf="@id/btn_clear"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="User list"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/btn_clear" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/birth_attendant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_bar_manage_users"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/delete_img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="10sp"
+            android:background="@color/white"
+            android:src="@drawable/delete_manage_user" />
+
+
+        <TextView
+            android:id="@+id/textDialog1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Jalaj Mathur"
+            android:textColor="@color/black"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/textDialog21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDialog1"
+            android:fontFamily="@font/poppins"
+            android:text="Birth attendant"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/divider_dialog1"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/textDialog21"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/divider" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/supervisor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/birth_attendant"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/delete_img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="10sp"
+            android:background="@color/white"
+            android:src="@drawable/delete_manage_user" />
+
+
+        <TextView
+            android:id="@+id/text_supervisor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Savitri Rathod"
+            android:textColor="@color/black"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/text_supervisor_designation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_supervisor_name"
+            android:fontFamily="@font/poppins"
+            android:text="Supervisor"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/divider_dialog2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/text_supervisor_designation"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/divider" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/midwife"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/supervisor"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/delete_img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="10sp"
+            android:background="@color/white"
+            android:src="@drawable/delete_manage_user" />
+
+
+        <TextView
+            android:id="@+id/text_midwife_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Sushmita Kumar"
+            android:textColor="@color/black"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/text_midwife_designation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_midwife_name"
+            android:fontFamily="@font/poppins"
+            android:text="Midwife"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/divider_dialog3"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/text_midwife_designation"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/divider" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/fab_2_exten"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/fab_2_exten"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Add User"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:drawableLeftCompat="@drawable/add_manage_user" />
+    </RelativeLayout>
+
+</RelativeLayout>

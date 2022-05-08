@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudio/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.253125" />
         <entry key="..\:/AndroidStudio/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/activity_task1.xml" value="0.195" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/add_manage_user.xml" value="0.1155" />
@@ -35,6 +36,8 @@
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/vertical_line.xml" value="0.195" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/yello_color.xml" value="0.1" />
         <entry key="..\:/Calendar_View/air/src/main/res/font/ab.xml" value="0.28020833333333334" />
+        <entry key="..\:/Calendar_View/air/src/main/res/font/arrays.xml" value="0.19444444444444445" />
+        <entry key="..\:/Calendar_View/air/src/main/res/font/font_certificate.xml" value="0.19444444444444445" />
         <entry key="..\:/Calendar_View/air/src/main/res/font/poppins.xml" value="0.28020833333333334" />
         <entry key="..\:/Calendar_View/air/src/main/res/font/poppins_medium.xml" value="0.28020833333333334" />
         <entry key="..\:/Calendar_View/air/src/main/res/font/roboto_medium.xml" value="0.28020833333333334" />
@@ -43,11 +46,12 @@
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_graph.xml" value="0.152" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_main2.xml" value="0.2" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_spinner_doing.xml" value="0.24923076923076923" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task.xml" value="0.23981481481481481" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task1.xml" value="0.27625" />
-        <entry key="..\:/Calendar_View/air/src/main/res/layout/dialog.xml" value="0.25" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/dialog.xml" value="0.4" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_birth_attendant.xml" value="0.25" />
-        <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_home.xml" value="0.22265122265122264" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_manage_user.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_medical_officer.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_mid_wife.xml" value="0.25" />
@@ -60,6 +64,7 @@
         <entry key="..\:/Calendar_View/air/src/main/res/xml/checking.xml" value="0.25" />
         <entry key="..\:/Calendar_View/app/src/main/res/layout/activity_main.xml" value="0.1361111111111111" />
         <entry key="..\:/Calendar_View/samplecalendar/src/main/res/layout/activity_main.xml" value="0.536" />
+        <entry key="..\:/Calendar_View/samplecalendar/src/main/res/layout/calendar_main.xml" value="0.24923076923076923" />
       </map>
     </option>
   </component>

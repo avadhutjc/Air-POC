@@ -6,132 +6,363 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_weight="1.4"
-        android:background="#00BCD4">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvTopHeader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:fontFamily="@font/poppins_medium"
-            android:padding="5dp"
-            android:text="Sushmita Kumar"
-            android:textColor="@color/black"
-            android:textSize="23sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/people_img_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10sp"
-            android:background="#00BCD4"
-            android:src="@drawable/people"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/switch_img_btn"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/switch_img_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10sp"
-            android:background="#00BCD4"
-            android:src="@drawable/switch_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <RelativeLayout
-        android:id="@+id/rel1"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="15dp">
-
-        <Button
-            android:id="@+id/btn_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_corner"
-            android:backgroundTint="#1976D2"
-            android:fontFamily="@font/poppins_medium"
-            android:text="DETAILS"
-            android:textColor="@color/black" />
-
-        <View
-            android:id="@+id/btn_calendar"
-            android:layout_width="205dp"
-            android:layout_height="52dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/input_field" />
-
-        <TextView
-            android:id="@+id/cal_text"
-            style="@style/textView"
-            android:layout_width="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/btn_detail"
-            android:gravity="center"
-            android:padding="12dp"
-            android:text="                     "
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/cal_icon"
-            style="@style/textView"
-            android:layout_width="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/cal_text"
-            android:gravity="center"
-            android:padding="12dp"
-            app:drawableEndCompat="@drawable/calendar_today" />
-
-        <Spinner
-            android:id="@+id/spinners_show"
-            style="@style/TextAppearance.AppCompat.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center"
-            android:layout_marginStart="190dp"
-            android:layout_marginTop="20sp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20sp"
-            android:dropDownWidth="400dp"
-            android:gravity="center_vertical" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/rel1">
-
-<!--        <com.github.mikephil.charting.charts.BarChart-->
-<!--            android:id="@+id/chart_in_home_frag"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="200dp" />-->
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_home_frag"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#00BCD4">
+
+                <TextView
+                    android:id="@+id/tvTopHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="5dp"
+                    android:text="Sushmita Kumar"
+                    android:textColor="@color/black"
+                    android:textSize="23sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/people_img_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="#00BCD4"
+                    android:src="@drawable/people"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/switch_img_btn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/switch_img_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="#00BCD4"
+                    android:src="@drawable/switch_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="15dp">
+
+                <Button
+                    android:id="@+id/btn_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btn_corner"
+                    android:backgroundTint="#1976D2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="DETAILS"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/cal_text"
+                    style="@style/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/btn_detail"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="                     "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/cal_icon"
+                    style="@style/textView"
+                    android:layout_width="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/cal_text"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    app:drawableEndCompat="@drawable/calendar_today" />
+
+                <Spinner
+                    android:id="@+id/spinners_show"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/input_field"
+                    android:dropDownWidth="400dp"
+                    android:gravity="center"
+                    android:minWidth="270dp"
+                    android:prompt="@string/spinner_title" />
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/practice_session_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_below="@id/rel1"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/headline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Practice Session"
+                        android:textAllCaps="true"
+                        android:textColor="#1976D2"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/second_practice_sessions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/headline"
+                        android:layout_marginTop="10dp"
+                        android:text="29s"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sub_headline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/second_practice_sessions"
+                        android:labelFor="@+id/headline"
+                        android:text="-37% lower than the average"
+                        android:textColor="#B00020"
+                        android:textSize="15sp" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/home_frag_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/sub_headline"
+                        android:layout_marginTop="5dp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
 
+            <LinearLayout
+                android:id="@+id/just"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view_avg_ev_duration"
+                            android:layout_width="0dp"
+                            android:layout_height="250dp"
+                            android:layout_weight="1">
+
+                            <RelativeLayout
+                                android:id="@+id/avg_ev_duration_relative"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:id="@+id/avg_ev_duration"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Avg EV Duration"
+                                    android:textColor="#1976D2" />
+
+                                <TextView
+                                    android:id="@+id/ideal_time_seconds"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/avg_ev_duration"
+                                    android:text="43s"
+                                    android:textColor="@color/black"
+                                    android:textSize="30sp" />
+
+                                <TextView
+                                    android:id="@+id/ideal_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/ideal_time_seconds"
+                                    android:text="Ideal time > 35s"
+                                    android:textColor="#808080"
+                                    android:textSize="20sp" />
+
+                                <com.github.mikephil.charting.charts.BarChart
+                                    android:id="@+id/home_frag_chart_ev_duration"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_below="@id/ideal_time" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/longest_ev"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Longest ev"
+                                android:textAllCaps="true"
+                                android:textColor="#1976D2" />
+
+                            <TextView
+                                android:id="@+id/ideal_longest_time_seconds"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/longest_ev"
+                                android:text="45s"
+                                android:textColor="@color/black"
+                                android:textSize="30sp" />
+
+                            <TextView
+                                android:id="@+id/ideal_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/ideal_longest_time_seconds"
+                                android:text="12-May-2022"
+                                android:textColor="#808080"
+                                android:textSize="20sp" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="250dp"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/avg_time_first_ev"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Avg TIME to 1st EV"
+                                android:textColor="#1976D2" />
+
+                            <TextView
+                                android:id="@+id/first_ev_seconds"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/avg_time_first_ev"
+                                android:text="43s"
+                                android:textColor="@color/black"
+                                android:textSize="30sp" />
+
+                            <TextView
+                                android:id="@+id/ideal_time_first_ev_seconds"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/first_ev_seconds"
+                                android:text="@string/ideal_time_5s"
+                                android:textColor="#B00020"
+                                android:textSize="20sp" />
+
+                            <com.github.mikephil.charting.charts.BarChart
+                                android:id="@+id/home_frag_chart_first_ev_duration"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@id/ideal_time_first_ev_seconds" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/best_time_first_ev"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="best time to first 1st ev"
+                                android:textAllCaps="true"
+                                android:textColor="#1976D2" />
+
+                            <TextView
+                                android:id="@+id/best_time_first_ev_seconds"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/best_time_first_ev"
+                                android:text="3s"
+                                android:textColor="@color/black"
+                                android:textSize="30sp" />
+
+                            <TextView
+                                android:id="@+id/ideal_date_for_first_ev"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/best_time_first_ev_seconds"
+                                android:text="14-May-2022"
+                                android:textColor="#808080"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
-
