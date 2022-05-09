@@ -14,19 +14,26 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.calendar_view.graphview.ColorTemplate1
+import com.example.calendar_view.room.GraphDAO
+import com.example.calendar_view.room.GraphDatabase
+import com.example.calendar_view.room.GraphEntity
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener,
-    AdapterView.OnItemSelectedListener {
+class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     var imageButton: ImageButton? = null
     var imageButton1: ImageButton? = null
     var cardView: CardView? = null
-    var cardView1: CardView? = null
+    lateinit var dao: GraphDAO
+    lateinit var database: GraphDatabase
+
 
     private var arrayAdapter: ArrayAdapter<String>? = null
 
@@ -62,6 +69,9 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener,
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
+
+        database = GraphDatabase.getGraphDatabase(requireContext())
+        dao = database.getGraphDAO()
 
         navController = Navigation.findNavController(view)
         // spinner = findViewById(R.id.spinners_show)
@@ -292,14 +302,42 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener,
         Log.d("check_bar", "getBarEntries function called")
 
         barEntriesArrayList!!.add(BarEntry(1f, 4f))
-        barEntriesArrayList!!.add(BarEntry(2f, 6f))
-        barEntriesArrayList!!.add(BarEntry(3f, 5f))
-        barEntriesArrayList!!.add(BarEntry(4f, 2f))
-        barEntriesArrayList!!.add(BarEntry(5f, 4f))
-        barEntriesArrayList!!.add(BarEntry(6f, 1f))
-        barEntriesArrayList!!.add(BarEntry(7f, 3f))
-    }
+//        barEntriesArrayList!!.add(BarEntry(2f, 6f))
+//        barEntriesArrayList!!.add(BarEntry(3f, 5f))
+//        barEntriesArrayList!!.add(BarEntry(4f, 2f))
+//        barEntriesArrayList!!.add(BarEntry(5f, 4f))
+//        barEntriesArrayList!!.add(BarEntry(6f, 1f))
+//        barEntriesArrayList!!.add(BarEntry(7f, 3f))
 
+       // val signUpData = GraphEntity(1f,11f)
+        val signUpData = GraphEntity(10f,11f)
+
+        CoroutineScope(Dispatchers.IO).launch {
+            dao.register(signUpData)
+        }
+
+    }
+/*
+        signUpBtn.setOnClickListener {
+            val signUpData = LoginEntity(
+                emailEtRegister.text.toString(),
+                passwordEt.text.toString()
+            )
+
+            CoroutineScope(Dispatchers.IO).launch {
+                dao.register(signUpData)
+            }
+
+            val intent = Intent(this@SignUpActivity, MainActivity::class.java)
+            startActivity(intent)
+            val msg = "Successfully Sign-Up Now Login Here"
+            val toast = Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT)
+            toast.show()
+            val handler = Handler()
+            handler.postDelayed(Runnable { toast.cancel() }, 2000)
+        }
+
+ */
     override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
 
     }
