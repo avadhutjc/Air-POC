@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_homeFragment_to_midWifeFragment"
             app:destination="@id/midWifeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
     </fragment>
 
     <fragment
@@ -56,4 +59,15 @@
         android:name="com.example.calendar_view.MidWifeFragment"
         android:label="fragment_mid_wife"
         tools:layout="@layout/fragment_mid_wife" />
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.calendar_view.graphview.SummaryFragment"
+        android:label="SummaryFragment" >
+        <action
+            android:id="@+id/action_summaryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_summaryFragment_to_medicalOfficerFragment"
+            app:destination="@id/medicalOfficerFragment" />
+    </fragment>
 </navigation>

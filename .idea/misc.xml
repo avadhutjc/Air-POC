@@ -20,6 +20,7 @@
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/fab_2_exten.xml" value="0.1155" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/grey_color.xml" value="0.1" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/grey_task1.xml" value="0.1335" />
+        <entry key="..\:/Calendar_View/air/src/main/res/drawable/group_people.xml" value="0.1855" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/horizontal_line.xml" value="0.1" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/image.xml" value="0.144" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/input_field.xml" value="0.1205" />
@@ -28,7 +29,9 @@
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/one.xml" value="0.1" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/people.xml" value="0.232" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/red_color.xml" value="0.1" />
+        <entry key="..\:/Calendar_View/air/src/main/res/drawable/start_session.xml" value="0.1855" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/styleone.xml" value="0.1" />
+        <entry key="..\:/Calendar_View/air/src/main/res/drawable/summary_person.xml" value="0.1855" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/switch_avatar.xml" value="0.1855" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/switch_icon.xml" value="0.109" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/three.xml" value="0.1245" />
@@ -41,12 +44,13 @@
         <entry key="..\:/Calendar_View/air/src/main/res/font/arrays.xml" value="0.19444444444444445" />
         <entry key="..\:/Calendar_View/air/src/main/res/font/font_certificate.xml" value="0.19444444444444445" />
         <entry key="..\:/Calendar_View/air/src/main/res/font/poppins.xml" value="0.28020833333333334" />
+        <entry key="..\:/Calendar_View/air/src/main/res/font/poppins_below_medium.xml" value="0.284375" />
         <entry key="..\:/Calendar_View/air/src/main/res/font/poppins_medium.xml" value="0.28020833333333334" />
         <entry key="..\:/Calendar_View/air/src/main/res/font/roboto_medium.xml" value="0.28020833333333334" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_barchart.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_custom_dialog.xml" value="0.2359375" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_graph.xml" value="0.152" />
-        <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_main2.xml" value="0.2" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_spinner_doing.xml" value="0.24923076923076923" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task.xml" value="0.23981481481481481" />
@@ -57,6 +61,7 @@
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_manage_user.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_medical_officer.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_mid_wife.xml" value="0.25" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_summary.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_window.xml" value="0.2323076923076923" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/graph_item_layout.xml" value="0.2" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/graph_layout.xml" value="0.17395833333333333" />
