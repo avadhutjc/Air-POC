@@ -23,11 +23,13 @@
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/horizontal_line.xml" value="0.1" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/image.xml" value="0.144" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/input_field.xml" value="0.1205" />
+        <entry key="..\:/Calendar_View/air/src/main/res/drawable/j_switch_user.xml" value="0.1855" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/line_2.xml" value="0.1" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/one.xml" value="0.1" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/people.xml" value="0.232" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/red_color.xml" value="0.1" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/styleone.xml" value="0.1" />
+        <entry key="..\:/Calendar_View/air/src/main/res/drawable/switch_avatar.xml" value="0.1855" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/switch_icon.xml" value="0.109" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/three.xml" value="0.1245" />
         <entry key="..\:/Calendar_View/air/src/main/res/drawable/top_a_regul.xml" value="0.138" />
@@ -49,7 +51,7 @@
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_spinner_doing.xml" value="0.24923076923076923" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task.xml" value="0.23981481481481481" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task1.xml" value="0.27625" />
-        <entry key="..\:/Calendar_View/air/src/main/res/layout/dialog.xml" value="0.4" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/dialog.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_birth_attendant.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_manage_user.xml" value="0.25" />
