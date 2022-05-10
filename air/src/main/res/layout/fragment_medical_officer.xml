@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".MidWifeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="65dp"
                 android:background="#00BCD4">
 
                 <TextView
@@ -35,12 +35,12 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/people_img_btn"
+                    android:id="@+id/people_img_btn_back_to_medical_officer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10sp"
+                    android:layout_margin="20dp"
                     android:background="#00BCD4"
-                    android:src="@drawable/people"
+                    android:src="@drawable/group_people"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/switch_img_btn"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -61,20 +61,24 @@
             <RelativeLayout
                 android:id="@+id/rel1"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="15dp">
+                android:layout_height="80dp"
+                android:layout_gravity="center">
 
                 <Button
                     android:id="@+id/btn_detail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="110dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/btn_corner"
-                    android:backgroundTint="#1976D2"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#00BCD4"
                     android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:shadowRadius="100"
                     android:text="DETAILS"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/cal_text"
@@ -91,8 +95,9 @@
                 <TextView
                     android:id="@+id/cal_icon"
                     style="@style/textView"
-                    android:layout_width="70dp"
+                    android:layout_width="60dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_toEndOf="@id/cal_text"
                     android:gravity="center"
                     android:padding="12dp"
@@ -120,9 +125,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="7dp">
 
                 <RelativeLayout
                     android:id="@+id/practice_session_view"
@@ -135,6 +140,7 @@
                         android:id="@+id/headline"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="Practice Session"
                         android:textAllCaps="true"
                         android:textColor="#1976D2"
@@ -146,6 +152,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/headline"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="@font/poppins_below_medium"
                         android:text="29s"
                         android:textAllCaps="true"
                         android:textColor="@color/black"
@@ -156,20 +163,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/second_practice_sessions"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_below_medium"
                         android:labelFor="@+id/headline"
                         android:text="-37% lower than the average"
                         android:textColor="#B00020"
                         android:textSize="15sp" />
 
                     <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/home_frag_chart"
+                        android:id="@+id/home_frag_chart_home"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_below="@id/sub_headline"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="10dp" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
             <LinearLayout
                 android:id="@+id/just"
@@ -179,7 +187,7 @@
 
                 <RelativeLayout
                     android:id="@+id/avg_rel_layout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="horizontal">
@@ -189,10 +197,11 @@
                         android:layout_width="250dp"
                         android:layout_height="250dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        app:cardCornerRadius="7dp">
 
                         <RelativeLayout
                             android:id="@+id/avg_ev_duration_relative"
@@ -204,6 +213,7 @@
                                 android:id="@+id/avg_ev_duration"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
                                 android:text="Avg EV Duration"
                                 android:textColor="#1976D2" />
 
@@ -212,6 +222,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/avg_ev_duration"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/poppins_below_medium"
                                 android:text="43s"
                                 android:textColor="@color/black"
                                 android:textSize="30sp" />
@@ -221,9 +233,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/ideal_time_seconds"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/poppins_below_medium"
                                 android:text="Ideal time > 35s"
                                 android:textColor="@color/grey"
-                                android:textSize="20sp" />
+                                android:textSize="15sp" />
 
                             <com.github.mikephil.charting.charts.BarChart
                                 android:id="@+id/home_frag_chart_ev_duration11"
@@ -245,10 +259,11 @@
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        app:cardCornerRadius="7dp">
 
                         <RelativeLayout
                             android:id="@+id/avg_ev_duration_relative1"
@@ -260,7 +275,9 @@
                                 android:id="@+id/avg_ev_duration1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
                                 android:text="longest EV"
+                                android:textAllCaps="true"
                                 android:textColor="#1976D2" />
 
                             <TextView
@@ -269,6 +286,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/avg_ev_duration1"
                                 android:layout_marginTop="5dp"
+                                android:fontFamily="@font/poppins_below_medium"
                                 android:text="42s"
                                 android:textColor="@color/black"
                                 android:textSize="30sp" />
@@ -280,25 +298,27 @@
                                 android:layout_below="@id/ideal_time_seconds1"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/poppins_below_medium"
                                 android:text="15-May-2022"
                                 android:textColor="@color/grey"
-                                android:textSize="18sp" />
+                                android:textSize="15sp" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 
                     <LinearLayout
                         android:id="@+id/linearone"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="130dp">
+                        android:layout_marginTop="140dp">
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/card_view_avg_ev_duration11"
-                            android:layout_width="170dp"
+                            android:layout_width="175dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="20dp">
+                            android:layout_marginBottom="20dp"
+                            app:cardCornerRadius="7dp">
 
                             <TextView
                                 android:id="@+id/avg_ev_duration11"
@@ -306,6 +326,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="5dp"
+                                android:fontFamily="@font/poppins_medium"
                                 android:text="Best time to 1st ev"
                                 android:textAllCaps="true"
                                 android:textColor="#1976D2" />
@@ -316,6 +337,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="25dp"
+                                android:fontFamily="@font/poppins_below_medium"
                                 android:text="3s"
                                 android:textColor="@color/black"
                                 android:textSize="30sp" />
@@ -327,10 +349,10 @@
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="70dp"
                                 android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/poppins_below_medium"
                                 android:text="17-May-2022"
                                 android:textColor="@color/grey"
-                                android:textSize="18sp" />
-
+                                android:textSize="15sp" />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
                 </RelativeLayout>
@@ -341,7 +363,7 @@
                 android:id="@+id/avg_rel_layout2"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
@@ -350,10 +372,10 @@
                     android:layout_width="200dp"
                     android:layout_height="250dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    app:cardCornerRadius="7dp">
 
                     <RelativeLayout
                         android:id="@+id/avg_ev_duration_relative2"
@@ -365,6 +387,7 @@
                             android:id="@+id/avg_ev_duration2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
                             android:text="Avg TIME to 1st EV"
                             android:textColor="#1976D2" />
 
@@ -373,6 +396,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/avg_ev_duration2"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_below_medium"
                             android:text="5.1s"
                             android:textColor="@color/black"
                             android:textSize="30sp" />
@@ -382,15 +407,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/ideal_time_seconds2"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_below_medium"
                             android:text="@string/ideal_time_5s"
-                            android:textColor="#B00020"
-                            android:textSize="20sp" />
+                            android:textColor="@color/red"
+                            android:textSize="15sp" />
 
                         <com.github.mikephil.charting.charts.BarChart
                             android:id="@+id/home_frag_chart_ev_duration2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_below="@id/ideal_time2" />
+                            android:layout_below="@id/ideal_time2"
+                            android:layout_marginTop="10dp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>

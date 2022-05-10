@@ -12,7 +12,7 @@ class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private fun iniViews(itemView: View) {
         mTvName = itemView.findViewById(R.id.headline)
         mTvAge = itemView.findViewById(R.id.second_practice_sessions)
-        mGraph = itemView.findViewById(R.id.home_frag_chart)
+      //  mGraph = itemView.findViewById(R.id.home_frag_chart)
     }
 
     fun setData(student: Student) {

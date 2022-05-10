@@ -5,24 +5,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.calendar_view.R
 import com.example.calendar_view.SpinnerDoing
-import com.example.calendar_view.Student
-import com.example.calendar_view.StudentAdapter
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_summary.*
 
 class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListener,
     AdapterView.OnItemSelectedListener {
@@ -77,17 +71,49 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
                 i: Int,
                 l: Long
             ) {
-                val items: String = adapterView?.getItemAtPosition(i) as String
-                //Toast.makeText(requireContext(), items, Toast.LENGTH_LONG).show() ->will show just toast
-                Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
-                    .show() //show toast + msg
-
                 val intent: Intent
                 when (i) {
                     1 -> {
                         intent = Intent(requireContext(), SpinnerDoing::class.java)
+                        val items: String = adapterView?.getItemAtPosition(i) as String
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
                         startActivity(intent)
                     }
+
+                    2 -> {
+                        intent = Intent(Intent.ACTION_VIEW).setClassName(
+                            "ru.slybeaver.truecalendar",
+                            "ru.slybeaver.truecalendar.CalendarActivity"
+                        )
+                        val items: String = adapterView?.getItemAtPosition(i) as String
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        startActivity(intent)
+                    }
+                    3 -> {
+                        intent = Intent(requireContext(), SpinnerDoing::class.java)
+                        val items: String = adapterView?.getItemAtPosition(i) as String
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        startActivity(intent)
+                    }
+                    4 -> {
+                        intent = Intent(Intent.ACTION_VIEW).setClassName(
+                            "ru.slybeaver.truecalendar",
+                            "ru.slybeaver.truecalendar.CalendarActivity"
+                        )
+                        val items: String = adapterView?.getItemAtPosition(i) as String
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        startActivity(intent)
+                    }
+                    5 -> {
+                        intent = Intent(Intent.ACTION_VIEW).setClassName(
+                            "ru.slybeaver.truecalendar",
+                            "ru.slybeaver.truecalendar.CalendarActivity"
+                        )
+                        val items: String = adapterView?.getItemAtPosition(i) as String
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        startActivity(intent)
+                    }
+
                 }
             }
 
@@ -98,17 +124,15 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
 
         cardView = view.findViewById<View>(R.id.card) as CardView
         cardView!!.setOnClickListener {
-            navController.navigate(R.id.action_homeFragment_to_birthAttendantFragment) // -> onclick of btn will open any fragment assign
         }
 
         cardView = view.findViewById<View>(R.id.card_view_avg_ev_duration) as CardView
         cardView?.setOnClickListener {
-            navController.navigate(R.id.action_homeFragment_to_birthAttendantFragment) // -> onclick of btn will open any fragment assign
         }
 
         imageButton1 = view.findViewById(R.id.people_img_btn_back_to_home) as ImageButton
         imageButton1!!.setOnClickListener {
-            navController.navigate(R.id.action_summaryFragment_to_homeFragment)
+            navController.navigate(R.id.action_summaryFragment_to_midWifeFragment)
         }
 
         imageButton = view.findViewById<View>(R.id.switch_img_btn) as ImageButton
@@ -124,31 +148,33 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
             dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
             dialog.show()
 
-            val relativeLayout1 = dialog.findViewById<View>(R.id.rel111) as RelativeLayout
-            relativeLayout1.setOnClickListener {
-                navController.navigate(R.id.action_summaryFragment_to_homeFragment) // -> onclick of btn will open any fragment assign
+            val relativeLayout3 = dialog.findViewById<View>(R.id.rel1) as RelativeLayout
+            relativeLayout3.setOnClickListener {
+               navController.navigate(R.id.action_summaryFragment_to_midWifeFragment)
                 dialog.dismiss()
             }
 
             val relativeLayout2 = dialog.findViewById<View>(R.id.rel11) as RelativeLayout
             relativeLayout2.setOnClickListener {
-                navController.navigate(R.id.action_homeFragment_to_medicalOfficerFragment) // -> onclick of btn will open any fragment assign
+                navController.navigate(R.id.action_summaryFragment_to_medicalOfficerFragment) // -> onclick of btn will open any fragment assign
                 dialog.dismiss()
             }
 
-            val relativeLayout3 = dialog.findViewById<View>(R.id.rel1) as RelativeLayout
-            relativeLayout3.setOnClickListener {
-                navController.navigate(R.id.action_homeFragment_to_midWifeFragment)
-                dialog.dismiss()
+            val relativeLayout13 = dialog.findViewById<View>(R.id.rel111) as RelativeLayout
+            relativeLayout13.setOnClickListener {
+                Toast.makeText(
+                    requireContext(),
+                    "You Cannot Switch To Birth Attendant Account",
+                    Toast.LENGTH_LONG
+                ).show()
             }
-
         }
 
         Log.d("check", "AnotherBarActivity is running")
         //    barChart = view.findViewById<BarChart>(R.id.chart_in_home_frag) -> show wrong initialization
         //barChart = view.findViewById(R.id.home_frag_chart) //-> show correct initialization
         //barChart1 = view.findViewById(R.id.home_frag_chart_ev_duration11) //-> show correct initialization
-       // barChart2 = view.findViewById(R.id.home_frag_chart_ev_duration2)
+        // barChart2 = view.findViewById(R.id.home_frag_chart_ev_duration2)
         getBarEntries()
         barDataSet = BarDataSet(barEntriesArrayList, "")
         barData = BarData(barDataSet)

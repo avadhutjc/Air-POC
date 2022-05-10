@@ -8,8 +8,8 @@ interface GraphDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun register(graphEntity: GraphEntity) //loginEntity is object and LoginEntity is table
 
-    @Query("select * from graph_table where pointsOnGraphX = :pointX and pointsOnGraphY = :pointY")
-    fun getUser(pointX: Float, pointY: Float): GraphEntity
+    @Query("select * from graph_table")
+    fun getUser(): List<GraphEntity>
 
     @Update
     fun updateUser(graphEntity: GraphEntity)
@@ -19,3 +19,7 @@ interface GraphDAO {
 
 
 }
+/*
+    @Query("select * from graph_table")
+    fun getUser(): List<GraphEntity>
+ */

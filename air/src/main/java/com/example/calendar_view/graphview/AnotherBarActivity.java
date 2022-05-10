@@ -28,7 +28,7 @@ public class AnotherBarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home);
+        setContentView(R.layout.fragment_mid_wife);
         Log.d("check", "AnotherBarActivity is running");
         // initializing variable for bar chart.
       //  barChart = findViewById(R.id.chart_in_home_frag);

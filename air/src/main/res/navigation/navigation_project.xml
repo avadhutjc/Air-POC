@@ -3,71 +3,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_project"
-    app:startDestination="@id/homeFragment">
-
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.calendar_view.HomeFragment"
-        android:label="HomeFragment">
-        <action
-            android:id="@+id/action_homeFragment_to_windowFragment"
-            app:destination="@id/windowFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_manageUserFragment"
-            app:destination="@id/manageUserFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_birthAttendantFragment"
-            app:destination="@id/birthAttendantFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_medicalOfficerFragment"
-            app:destination="@id/medicalOfficerFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_midWifeFragment"
-            app:destination="@id/midWifeFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_summaryFragment"
-            app:destination="@id/summaryFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/windowFragment"
-        android:name="com.example.calendar_view.WindowFragment"
-        android:label="fragment_window"
-        tools:layout="@layout/fragment_window" />
+    app:startDestination="@id/midWifeFragment">
 
     <fragment
         android:id="@+id/manageUserFragment"
         android:name="com.example.calendar_view.ManageUserFragment"
         android:label="fragment_manage_user"
-        tools:layout="@layout/fragment_manage_user" >
+        tools:layout="@layout/fragment_manage_user">
         <action
-            android:id="@+id/action_manageUserFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_manageUserFragment_to_midWifeFragment"
+            app:destination="@id/midWifeFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/birthAttendantFragment"
-        android:name="com.example.calendar_view.BirthAttendantFragment"
-        android:label="fragment_birth_attendant"
-        tools:layout="@layout/fragment_birth_attendant" />
+
     <fragment
         android:id="@+id/medicalOfficerFragment"
         android:name="com.example.calendar_view.MedicalOfficerFragment"
         android:label="fragment_medical_officer"
-        tools:layout="@layout/fragment_medical_officer" />
+        tools:layout="@layout/fragment_medical_officer">
+        <action
+            android:id="@+id/action_medicalOfficerFragment_self"
+            app:destination="@id/medicalOfficerFragment" />
+        <action
+            android:id="@+id/action_medicalOfficerFragment_to_midWifeFragment"
+            app:destination="@id/midWifeFragment" />
+        <action
+            android:id="@+id/action_medicalOfficerFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/midWifeFragment"
         android:name="com.example.calendar_view.MidWifeFragment"
         android:label="fragment_mid_wife"
-        tools:layout="@layout/fragment_mid_wife" />
+        tools:layout="@layout/fragment_mid_wife">
+        <action
+            android:id="@+id/action_midWifeFragment_to_midWifePracticeSessionFragment"
+            app:destination="@id/midWifePracticeSessionFragment" />
+        <action
+            android:id="@+id/action_midWifeFragment_to_manageUserFragment"
+            app:destination="@id/manageUserFragment" />
+        <action
+            android:id="@+id/action_midWifeFragment_to_medicalOfficerFragment"
+            app:destination="@id/medicalOfficerFragment" />
+        <action
+            android:id="@+id/action_midwifeFragment_self"
+            app:destination="@id/midWifeFragment" />
+        <action
+            android:id="@+id/action_midWifeFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+
+    </fragment>
+
     <fragment
         android:id="@+id/summaryFragment"
         android:name="com.example.calendar_view.graphview.SummaryFragment"
-        android:label="SummaryFragment" >
+        android:label="SummaryFragment">
         <action
-            android:id="@+id/action_summaryFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_summaryFragment_to_midWifeFragment"
+            app:destination="@id/midWifeFragment" />
         <action
             android:id="@+id/action_summaryFragment_to_medicalOfficerFragment"
             app:destination="@id/medicalOfficerFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/midWifePracticeSessionFragment"
+        android:name="com.example.calendar_view.MidWifePracticeSessionFragment"
+        android:label="fragment_mid_wife_practice_session"
+        tools:layout="@layout/fragment_mid_wife_practice_session">
+        <action
+            android:id="@+id/action_midWifePracticeSessionFragment_to_midWifeFragment"
+            app:destination="@id/midWifeFragment" />
     </fragment>
 </navigation>

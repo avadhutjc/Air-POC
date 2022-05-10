@@ -18,11 +18,9 @@ class ManageUserFragment : Fragment(R.layout.fragment_manage_user) {
 
         navController = Navigation.findNavController(view)
 
-        imageButton = view.findViewById<ImageButton>(R.id.btn_clear)
+        imageButton = view.findViewById<ImageButton>(R.id.btn_clear_midwife_practice_session)
         imageButton?.setOnClickListener {
-            navController.navigate(R.id.action_manageUserFragment_to_homeFragment)
+            navController.navigate(R.id.action_manageUserFragment_to_midWifeFragment)
         }
     }
-
-
 }

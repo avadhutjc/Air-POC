@@ -13,7 +13,7 @@ data class GraphEntity(
 
     @ColumnInfo(name = "pointsOnGraphX") var xPoints: Float,
     @ColumnInfo(name = "pointsOnGraphY") var yPoints: Float
-) {
+    ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Int = 0
