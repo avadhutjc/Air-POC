@@ -51,6 +51,12 @@
         <action
             android:id="@+id/action_midWifeFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_midWifeFragment_to_midWifeEvDurationFragment"
+            app:destination="@id/midWifeEvDurationFragment" />
+        <action
+            android:id="@+id/action_midWifeFragment_to_firstEvMidWifeFragment"
+            app:destination="@id/firstEvMidWifeFragment" />
 
     </fragment>
 
@@ -74,6 +80,23 @@
         tools:layout="@layout/fragment_mid_wife_practice_session">
         <action
             android:id="@+id/action_midWifePracticeSessionFragment_to_midWifeFragment"
+            app:destination="@id/midWifeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/midWifeEvDurationFragment"
+        android:name="com.example.calendar_view.MidWifeEvDurationFragment"
+        android:label="MidWifeEvDurationFragment" >
+        <action
+            android:id="@+id/action_midWifeEvDurationFragment_to_midWifeFragment"
+            app:destination="@id/midWifeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstEvMidWifeFragment"
+        android:name="com.example.calendar_view.FirstEvMidWifeFragment"
+        android:label="fragment_first_ev_mid_wife"
+        tools:layout="@layout/fragment_first_ev_mid_wife" >
+        <action
+            android:id="@+id/action_firstEvMidWifeFragment_to_midWifeFragment"
             app:destination="@id/midWifeFragment" />
     </fragment>
 </navigation>

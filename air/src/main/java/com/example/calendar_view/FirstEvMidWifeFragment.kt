@@ -20,13 +20,13 @@ import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import kotlinx.android.synthetic.main.fragment_mid_wife.*
+import kotlinx.android.synthetic.main.fragment_first_ev_mid_wife.*
 import kotlinx.android.synthetic.main.fragment_mid_wife_ev_duration.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MidWifeEvDurationFragment : Fragment(R.layout.fragment_mid_wife_ev_duration), View.OnClickListener,
+class FirstEvMidWifeFragment : Fragment(R.layout.fragment_first_ev_mid_wife), View.OnClickListener,
     AdapterView.OnItemSelectedListener {
 
     var imageButton: ImageButton? = null
@@ -57,16 +57,16 @@ class MidWifeEvDurationFragment : Fragment(R.layout.fragment_mid_wife_ev_duratio
 
         navController = Navigation.findNavController(view)
 
-        imageButton = view.findViewById<ImageButton>(R.id.btn_clear_midwife_ev_duration)
+        imageButton = view.findViewById<ImageButton>(R.id.btn_clear_midwife_first_ev_duration)
         imageButton?.setOnClickListener {
-            navController.navigate(R.id.action_midWifeEvDurationFragment_to_midWifeFragment)
+            navController.navigate(R.id.action_firstEvMidWifeFragment_to_midWifeFragment)
         }
 
         //    barChart = view.findViewById<BarChart>(R.id.chart_in_home_frag) -> show wrong initialization
         getBarEntries()
         barDataSet = BarDataSet(barEntriesArrayList, "First graph")
         barData = BarData(barDataSet)
-        home_frag_chart_home_evduration?.data = barData
+        home_frag_chart_home_first_time_ev_midwife?.data = barData
 
         //  barDataSet?.setColors(*ColorTemplate.MATERIAL_COLORS) ->read only colors ->adding color to our bar data set.
         barDataSet?.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors

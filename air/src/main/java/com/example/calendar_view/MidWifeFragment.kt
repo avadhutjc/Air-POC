@@ -162,7 +162,12 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
 
         cardView = view.findViewById<View>(R.id.card_view_avg_ev_duration) as CardView
         cardView?.setOnClickListener {
-            //   navController.navigate(R.id.action_homeFragment_to_birthAttendantFragment) // -> onclick of btn will open any fragment assign
+              navController.navigate(R.id.action_midWifeFragment_to_midWifeEvDurationFragment) // -> onclick of btn will open any fragment assign
+        }
+
+        cardView = view.findViewById<View>(R.id.card_view_avg_ev_duration2) as CardView
+        cardView?.setOnClickListener {
+              navController.navigate(R.id.action_midWifeFragment_to_firstEvMidWifeFragment) // -> onclick of btn will open any fragment assign
         }
 
         imageButton1 = view.findViewById(R.id.people_img_btn_summary) as ImageButton
