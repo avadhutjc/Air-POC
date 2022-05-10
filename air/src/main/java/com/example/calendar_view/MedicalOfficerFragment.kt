@@ -20,6 +20,9 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import kotlinx.android.synthetic.main.fragment_medical_officer.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View.OnClickListener,
@@ -58,7 +61,6 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initListeners()
 
         database = GraphDatabase.getGraphDatabase(requireContext())
         dao = database.getGraphDAO()
@@ -88,7 +90,8 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
                     1 -> {
                         intent = Intent(requireContext(), SpinnerDoing::class.java)
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
 
@@ -98,13 +101,15 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
                             "ru.slybeaver.truecalendar.CalendarActivity"
                         )
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
                     3 -> {
                         intent = Intent(requireContext(), SpinnerDoing::class.java)
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
                     4 -> {
@@ -113,7 +118,8 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
                             "ru.slybeaver.truecalendar.CalendarActivity"
                         )
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
                     5 -> {
@@ -122,7 +128,8 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
                             "ru.slybeaver.truecalendar.CalendarActivity"
                         )
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
 
@@ -136,12 +143,12 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
 
         cardView = view.findViewById<View>(R.id.card) as CardView
         cardView!!.setOnClickListener {
-
+            navController.navigate(R.id.action_medicalOfficerFragment_to_medicalOfficerPracticeSessionFragment)
         }
 
         cardView = view.findViewById<View>(R.id.card_view_avg_ev_duration) as CardView
         cardView?.setOnClickListener {
-
+            navController.navigate(R.id.action_medicalOfficerFragment_to_medicalOfficerPracticeSessionFragment)
         }
 
 //        imageButton1 = view.findViewById(R.id.people_img_btn_summary) as ImageButton
@@ -169,8 +176,8 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
                     "You Cannot Switch To Birth Attendant Account",
                     Toast.LENGTH_LONG
                 ).show()
-                dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
-                dialog.dismiss()
+//                dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
+//                dialog.dismiss()
             }
 
             val relativeLayout2 = dialog.findViewById<View>(R.id.rel11) as RelativeLayout
@@ -198,59 +205,20 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
 //        barChart2 = view.findViewById(R.id.home_frag_chart_ev_duration2)
 
         //   barChart = view.findViewById(R.id.home_frag_chart_home) //-> show correct initialization
-        //    getBarEntries()
-//        barDataSet = BarDataSet(barEntriesArrayList, "First graph")
-//        barData = BarData(barDataSet)
-//        home_frag_chart_home?.data = barData
-//        home_frag_chart_ev_duration11?.data = barData
-//        home_frag_chart_ev_duration2?.data = barData
+        getBarEntries()
+        barDataSet = BarDataSet(barEntriesArrayList, "First graph")
+        barData = BarData(barDataSet)
+        home_frag_chart_home?.data = barData
+        home_frag_chart_ev_duration11?.data = barData
+        home_frag_chart_ev_duration2?.data = barData
 
 //        barChart1?.data = barData
 //        barChart2?.data = barData
         //  barDataSet?.setColors(*ColorTemplate.MATERIAL_COLORS) ->read only colors ->adding color to our bar data set.
         barDataSet?.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors
 
-/*        initViews()
-        buildStudentList()
-        setRecyclerView()*/
     }
 
-/*    private fun setRecyclerView() {
-        val studentAdapter = StudentAdapter(studentList)
-        val linearLayoutManager = LinearLayoutManager(requireContext())
-        recyclerView!!.layoutManager = linearLayoutManager
-              recyclerView!!.adapter = studentAdapter
-
-
-        Log.d("StudentList", studentList?.size.toString())
-    }*/
-
-/*    private fun buildStudentList() {
-        val student1 = Student("Practice Session", 22, "11f")
-        studentList.add(student1)
-    }
-
-    private fun initViews() {
-           recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_home_frag)
-    }*/
-
-    private fun initListeners() {
-        btn_detail.setOnClickListener(this)
-    }
-
-    override fun onClick(p0: View?) {
-        when (p0?.id) {
-            R.id.btn_detail -> {
-                //           navController.navigate(R.id.action_homeFragment_to_manageUserFragment)
-                val intent = Intent(Intent.ACTION_VIEW).setClassName(
-                    "ru.slybeaver.truecalendar", "ru.slybeaver.truecalendar.CalendarActivity"
-                )
-                startActivity(intent)
-            }
-        }
-    }
-
-/*
     private fun getBarEntries() {
         barEntriesArrayList = ArrayList<BarEntry>()
         Log.d("check_bar", "getBarEntries function called")
@@ -282,7 +250,18 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
         }
 
     }
-*/
+
+    override fun onClick(p0: View?) {
+        when (p0?.id) {
+            R.id.btn_detail -> {
+                //           navController.navigate(R.id.action_homeFragment_to_manageUserFragment)
+                val intent = Intent(Intent.ACTION_VIEW).setClassName(
+                    "ru.slybeaver.truecalendar", "ru.slybeaver.truecalendar.CalendarActivity"
+                )
+                startActivity(intent)
+            }
+        }
+    }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
 

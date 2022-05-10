@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_medicalOfficerFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_medicalOfficerFragment_to_medicalOfficerPracticeSessionFragment"
+            app:destination="@id/medicalOfficerPracticeSessionFragment" />
     </fragment>
 
     <fragment
@@ -92,11 +95,20 @@
     </fragment>
     <fragment
         android:id="@+id/firstEvMidWifeFragment"
-        android:name="com.example.calendar_view.FirstEvMidWifeFragment"
+        android:name="com.example.calendar_view.MidWifeFirstEvFragment"
         android:label="fragment_first_ev_mid_wife"
         tools:layout="@layout/fragment_first_ev_mid_wife" >
         <action
             android:id="@+id/action_firstEvMidWifeFragment_to_midWifeFragment"
             app:destination="@id/midWifeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicalOfficerPracticeSessionFragment"
+        android:name="com.example.calendar_view.MedicalOfficerPracticeSessionFragment"
+        android:label="fragment_medical_officer_practice_session"
+        tools:layout="@layout/fragment_medical_officer_practice_session" >
+        <action
+            android:id="@+id/action_medicalOfficerPracticeSessionFragment_to_medicalOfficerFragment"
+            app:destination="@id/medicalOfficerFragment" />
     </fragment>
 </navigation>

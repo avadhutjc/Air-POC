@@ -65,7 +65,7 @@
             android:layout_height="2dp"
             android:layout_below="@id/btn_Active"
             android:layout_centerVertical="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/divider" />
     </RelativeLayout>
 
@@ -115,7 +115,7 @@
             android:layout_height="2dp"
             android:layout_below="@id/textDialog21"
             android:layout_centerVertical="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/divider" />
 
     </RelativeLayout>
@@ -168,7 +168,7 @@
             android:layout_height="2dp"
             android:layout_below="@id/textDialog211"
             android:layout_centerVertical="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/divider" />
 
     </RelativeLayout>
@@ -176,7 +176,7 @@
     <RelativeLayout
         android:id="@+id/rel1213"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="56dp"
         android:layout_below="@id/rel111"
         android:layout_centerInParent="true">
 
@@ -187,8 +187,8 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"

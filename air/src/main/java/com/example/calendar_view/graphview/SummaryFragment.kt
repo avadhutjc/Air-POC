@@ -76,7 +76,8 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
                     1 -> {
                         intent = Intent(requireContext(), SpinnerDoing::class.java)
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
 
@@ -86,13 +87,15 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
                             "ru.slybeaver.truecalendar.CalendarActivity"
                         )
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
                     3 -> {
                         intent = Intent(requireContext(), SpinnerDoing::class.java)
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
                     4 -> {
@@ -101,7 +104,8 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
                             "ru.slybeaver.truecalendar.CalendarActivity"
                         )
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
                     5 -> {
@@ -110,7 +114,8 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
                             "ru.slybeaver.truecalendar.CalendarActivity"
                         )
                         val items: String = adapterView?.getItemAtPosition(i) as String
-                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG).show() //show toast + msg
+                        Toast.makeText(requireContext(), "Selected: $items", Toast.LENGTH_LONG)
+                            .show() //show toast + msg
                         startActivity(intent)
                     }
 
@@ -150,7 +155,7 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
 
             val relativeLayout3 = dialog.findViewById<View>(R.id.rel1) as RelativeLayout
             relativeLayout3.setOnClickListener {
-               navController.navigate(R.id.action_summaryFragment_to_midWifeFragment)
+                navController.navigate(R.id.action_summaryFragment_to_midWifeFragment)
                 dialog.dismiss()
             }
 
@@ -172,9 +177,10 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
 
         Log.d("check", "AnotherBarActivity is running")
         //    barChart = view.findViewById<BarChart>(R.id.chart_in_home_frag) -> show wrong initialization
-        //barChart = view.findViewById(R.id.home_frag_chart) //-> show correct initialization
-        //barChart1 = view.findViewById(R.id.home_frag_chart_ev_duration11) //-> show correct initialization
-        // barChart2 = view.findViewById(R.id.home_frag_chart_ev_duration2)
+        barChart = view.findViewById(R.id.home_frag_chart_home) //-> show correct initialization
+        barChart1 =
+            view.findViewById(R.id.home_frag_chart_ev_duration11) //-> show correct initialization
+        barChart2 = view.findViewById(R.id.home_frag_chart_ev_duration2)
         getBarEntries()
         barDataSet = BarDataSet(barEntriesArrayList, "")
         barData = BarData(barDataSet)

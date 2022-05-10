@@ -195,8 +195,8 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
                     "You Cannot Switch To Birth Attendant Account",
                     Toast.LENGTH_LONG
                 ).show()
-                dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
-                dialog.dismiss()
+//                dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
+//                dialog.dismiss()
             }
 
             val relativeLayout2 = dialog.findViewById<View>(R.id.rel11) as RelativeLayout
@@ -289,10 +289,20 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
         barEntriesArrayList!!.add(BarEntry(6f, 1f))
         barEntriesArrayList!!.add(BarEntry(7f, 3f))
 
-        val pushToEntity1 = GraphEntity(10f, 11f)
+        val pushToEntity1 = GraphEntity(1f, 4f)
+        val pushToEntity2 = GraphEntity(2f, 6f)
+        val pushToEntity3 = GraphEntity(3f, 5f)
+        val pushToEntity4 = GraphEntity(5f, 4f)
+        val pushToEntity5 = GraphEntity(6f, 1f)
+        val pushToEntity6 = GraphEntity(7f, 3f)
 
         CoroutineScope(Dispatchers.IO).launch {
             dao.register(pushToEntity1)
+            dao.register(pushToEntity2)
+            dao.register(pushToEntity3)
+            dao.register(pushToEntity4)
+            dao.register(pushToEntity5)
+            dao.register(pushToEntity6)
         }
 
         CoroutineScope(Dispatchers.IO).launch {

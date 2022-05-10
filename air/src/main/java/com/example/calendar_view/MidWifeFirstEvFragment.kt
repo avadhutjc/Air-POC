@@ -26,7 +26,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FirstEvMidWifeFragment : Fragment(R.layout.fragment_first_ev_mid_wife), View.OnClickListener,
+class MidWifeFirstEvFragment : Fragment(R.layout.fragment_first_ev_mid_wife), View.OnClickListener,
     AdapterView.OnItemSelectedListener {
 
     var imageButton: ImageButton? = null
