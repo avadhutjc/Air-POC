@@ -23,6 +23,7 @@ import com.github.mikephil.charting.data.BarEntry
 import kotlinx.android.synthetic.main.fragment_mid_wife.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListener,
@@ -187,8 +188,6 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
                     "You Cannot Switch To Birth Attendant Account",
                     Toast.LENGTH_LONG
                 ).show()
-//                dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
-//                dialog.dismiss()
             }
 
             val relativeLayout2 = dialog.findViewById<View>(R.id.rel11) as RelativeLayout
@@ -218,6 +217,7 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
         barDataSet.valueTextColor = Color.BLUE
         barDataSet.valueTextSize = 14f
         chart?.data = barData
+        home_frag_chart_ev_duration11.data = barData
 
         chart?.getDescription()?.setEnabled(false)
         chart?.setDrawGridBackground(false)
@@ -244,13 +244,13 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
     private fun getBarEntries() {
         barEntriesArrayList = ArrayList<BarEntry>()
 
-        barEntriesArrayList!!.add(BarEntry(1f, 4f))
+   /*     barEntriesArrayList!!.add(BarEntry(1f, 4f))
         barEntriesArrayList!!.add(BarEntry(2f, 6f))
         barEntriesArrayList!!.add(BarEntry(3f, 5f))
         barEntriesArrayList!!.add(BarEntry(4f, 2f))
         barEntriesArrayList!!.add(BarEntry(5f, 4f))
         barEntriesArrayList!!.add(BarEntry(6f, 1f))
-        barEntriesArrayList!!.add(BarEntry(7f, 3f))
+        barEntriesArrayList!!.add(BarEntry(7f, 3f))*/
 
         val pushToEntity1 = GraphEntity(1f, 4f)
         val pushToEntity2 = GraphEntity(2f, 6f)
@@ -259,7 +259,7 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
         val pushToEntity5 = GraphEntity(6f, 1f)
         val pushToEntity6 = GraphEntity(7f, 3f)
 
-        CoroutineScope(Dispatchers.IO).launch {
+      val temp =  CoroutineScope(Dispatchers.IO).async{
             dao.register(pushToEntity1)
             dao.register(pushToEntity2)
             dao.register(pushToEntity3)
@@ -279,7 +279,6 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
                 }
             }
         }
-
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
