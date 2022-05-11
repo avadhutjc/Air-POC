@@ -2,16 +2,17 @@ package com.example.calendar_view
 
 import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.example.calendar_view.graphview.ColorTemplate1
 import com.example.calendar_view.room.GraphDAO
 import com.example.calendar_view.room.GraphDatabase
 import com.example.calendar_view.room.GraphEntity
@@ -41,7 +42,7 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
     private val studentList = arrayListOf<Student>()
 
     // variable for our bar chart
-    private var barChart: BarChart? = null
+    private var chart: BarChart? = null
     private var barChart1: BarChart? = null
     private var barChart2: BarChart? = null
 
@@ -66,13 +67,11 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initListeners()
 
         database = GraphDatabase.getGraphDatabase(requireContext())
         dao = database.getGraphDAO()
 
         navController = Navigation.findNavController(view)
-        // spinner = findViewById(R.id.spinners_show)
 
         arrayAdapter =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, itemList)
@@ -82,14 +81,6 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
         // Drop down layout style - we get space between to list
         arrayAdapter!!.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-
-        /*  spinners_show.onItemSelectedListener.run {
-              val intent = Intent(Intent.ACTION_VIEW).setClassName(
-                  "ru.slybeaver.truecalendar", "ru.slybeaver.truecalendar.CalendarActivity"
-              )
-              startActivity(intent)
-          }*/
-
         spinners_show.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 adapterView: AdapterView<*>?,
@@ -97,8 +88,6 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
                 i: Int,
                 l: Long
             ) {
-                //Toast.makeText(requireContext(), items, Toast.LENGTH_LONG).show() ->will show just toast
-
                 val intent: Intent
                 when (i) {
                     1 -> {
@@ -162,12 +151,12 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
 
         cardView = view.findViewById<View>(R.id.card_view_avg_ev_duration) as CardView
         cardView?.setOnClickListener {
-              navController.navigate(R.id.action_midWifeFragment_to_midWifeEvDurationFragment) // -> onclick of btn will open any fragment assign
+            navController.navigate(R.id.action_midWifeFragment_to_midWifeEvDurationFragment) // -> onclick of btn will open any fragment assign
         }
 
         cardView = view.findViewById<View>(R.id.card_view_avg_ev_duration2) as CardView
         cardView?.setOnClickListener {
-              navController.navigate(R.id.action_midWifeFragment_to_firstEvMidWifeFragment) // -> onclick of btn will open any fragment assign
+            navController.navigate(R.id.action_midWifeFragment_to_firstEvMidWifeFragment) // -> onclick of btn will open any fragment assign
         }
 
         imageButton1 = view.findViewById(R.id.people_img_btn_summary) as ImageButton
@@ -185,8 +174,11 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
 
             val text = dialog.findViewById<View>(R.id.textDialog) as TextView
             text.text = "Shushma Kumar"
-            dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
+           // dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
+            // below this show your dialog box match parent fit to any screen
+            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ActionMenuView.LayoutParams.WRAP_CONTENT)
             dialog.show()
+
 
             val relativeLayout1 = dialog.findViewById<View>(R.id.rel111) as RelativeLayout
             relativeLayout1.setOnClickListener {
@@ -219,56 +211,28 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
 
         }
 
-        Log.d("check", "AnotherBarActivity is running")
-        //    barChart = view.findViewById<BarChart>(R.id.chart_in_home_frag) -> show wrong initialization
-//        barChart1 = view.findViewById(R.id.home_frag_chart_ev_duration11) //-> show correct initialization
-//        barChart2 = view.findViewById(R.id.home_frag_chart_ev_duration2)
-
-        //   barChart = view.findViewById(R.id.home_frag_chart_home) //-> show correct initialization
+        chart = view.findViewById(R.id.home_frag_chart_midwife) //-> show correct initialization
         getBarEntries()
-        barDataSet = BarDataSet(barEntriesArrayList, "First graph")
+        val barDataSet = BarDataSet(barEntriesArrayList, "First graph")
         barData = BarData(barDataSet)
-        home_frag_chart_home?.data = barData
-        home_frag_chart_ev_duration11?.data = barData
-        home_frag_chart_ev_duration2?.data = barData
+        barDataSet.valueTextColor = Color.BLUE
+        barDataSet.valueTextSize = 14f
+        chart?.data = barData
 
-//        barChart1?.data = barData
-//        barChart2?.data = barData
+        chart?.getDescription()?.setEnabled(false)
+        chart?.setDrawGridBackground(false)
+        chart?.setMaxVisibleValueCount(60)
+        chart?.setPinchZoom(false)
+        chart?.setDrawGridBackground(false)
+        chart?.setDrawGridBackground(false)
+
         //  barDataSet?.setColors(*ColorTemplate.MATERIAL_COLORS) ->read only colors ->adding color to our bar data set.
-        barDataSet?.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors
-
-/*        initViews()
-        buildStudentList()
-        setRecyclerView()*/
-    }
-
-/*    private fun setRecyclerView() {
-        val studentAdapter = StudentAdapter(studentList)
-        val linearLayoutManager = LinearLayoutManager(requireContext())
-        recyclerView!!.layoutManager = linearLayoutManager
-              recyclerView!!.adapter = studentAdapter
-
-
-        Log.d("StudentList", studentList?.size.toString())
-    }*/
-
-/*    private fun buildStudentList() {
-        val student1 = Student("Practice Session", 22, "11f")
-        studentList.add(student1)
-    }
-
-    private fun initViews() {
-           recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view_home_frag)
-    }*/
-
-    private fun initListeners() {
-        btn_detail.setOnClickListener(this)
+     //   barDataSet.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors
     }
 
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.btn_detail -> {
-                //           navController.navigate(R.id.action_homeFragment_to_manageUserFragment)
                 val intent = Intent(Intent.ACTION_VIEW).setClassName(
                     "ru.slybeaver.truecalendar", "ru.slybeaver.truecalendar.CalendarActivity"
                 )
@@ -279,7 +243,6 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
 
     private fun getBarEntries() {
         barEntriesArrayList = ArrayList<BarEntry>()
-        Log.d("check_bar", "getBarEntries function called")
 
         barEntriesArrayList!!.add(BarEntry(1f, 4f))
         barEntriesArrayList!!.add(BarEntry(2f, 6f))

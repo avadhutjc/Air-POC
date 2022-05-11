@@ -13,7 +13,6 @@
         <activity
             android:name=".SpinnerDoing"
             android:exported="false" />
-        <activity android:name=".MainActivity2" />
 
         <activity
             android:name=".MainActivity"

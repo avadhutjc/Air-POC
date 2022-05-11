@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_manageUserFragment_to_midWifeFragment"
             app:destination="@id/midWifeFragment" />
+        <action
+            android:id="@+id/action_manageUserFragment_self"
+            app:destination="@id/manageUserFragment" />
     </fragment>
 
     <fragment

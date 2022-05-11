@@ -60,6 +60,8 @@
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_spinner_doing.xml" value="0.24923076923076923" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task.xml" value="0.23981481481481481" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task1.xml" value="0.27625" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/confirm_delete_user_alert_dialog_box.xml" value="0.253125" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/delete_user_alert_dialog_box.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/dialog.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_birth_attendant.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_first_ev_mid_wife.xml" value="0.23958333333333334" />

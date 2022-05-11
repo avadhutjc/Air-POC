@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/delete_user_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_below_medium"
+            android:gravity="start"
+            android:text="Delete user?"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textDialog2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDialog"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_below_medium"
+            android:text="@string/abc"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txt_goBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDialog2"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="22dp"
+            android:layout_toStartOf="@id/txt_Yes"
+            android:fontFamily="@font/poppins_medium"
+            android:text="No, Go Back"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txt_Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDialog2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="end"
+            android:text="YES"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="15sp" />
+    </RelativeLayout>
+</RelativeLayout>

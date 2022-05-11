@@ -65,7 +65,7 @@ class MedicalOfficerPracticeSessionFragment :
         getBarEntries()
         barDataSet = BarDataSet(barEntriesArrayList, "First graph")
         barData = BarData(barDataSet)
-        home_frag_chart_home?.data = barData
+        //home_frag_chart_home?.data = barData
 
         //  barDataSet?.setColors(*ColorTemplate.MATERIAL_COLORS) ->read only colors ->adding color to our bar data set.
         barDataSet?.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors
