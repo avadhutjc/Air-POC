@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_medicalOfficerFragment_to_medicalOfficerPracticeSessionFragment"
             app:destination="@id/medicalOfficerPracticeSessionFragment" />
+        <action
+            android:id="@+id/action_medicalOfficerFragment_to_manageUserFragment"
+            app:destination="@id/manageUserFragment" />
     </fragment>
 
     <fragment

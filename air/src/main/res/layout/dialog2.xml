@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/medical_officer_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <ImageButton
+            android:id="@+id/imageDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:src="@drawable/switch_avatar"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/imageDialog"
+            android:fontFamily="@font/poppins"
+            android:text="Savitri Rathod"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textDialog2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDialog"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/imageDialog"
+            android:fontFamily="@font/poppins"
+            android:text="Medical Officer"
+            android:textColor="@color/grey"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_Active"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDialog2"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/imageDialog"
+            android:backgroundTint="#1976D2"
+            android:fontFamily="@font/poppins_font_300"
+            android:gravity="center|center_horizontal"
+            android:text="Active"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/btn_Active"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/divider" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/midwife_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medical_officer_dialog"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:id="@+id/imageDialog1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:src="@drawable/switch_avatar" />
+
+        <TextView
+            android:id="@+id/textDialog1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/imageDialog1"
+            android:fontFamily="@font/poppins"
+            android:text="Shushma Kumar"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textDialog21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDialog1"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/imageDialog1"
+            android:fontFamily="@font/poppins"
+            android:text="Midwife"
+            android:textColor="@color/grey"
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/divider_dialog1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/textDialog21"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/divider" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/birth_attendant_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/midwife_dialog"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:id="@+id/imageDialog11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="10sp"
+            android:background="@color/white"
+            android:contentDescription="TODO"
+            android:src="@drawable/j_switch_user" />
+
+
+        <TextView
+            android:id="@+id/textDialog11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/imageDialog11"
+            android:fontFamily="@font/poppins"
+            android:text="Jalaj Mathur"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textDialog211"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDialog11"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/imageDialog11"
+            android:fontFamily="@font/poppins"
+            android:text="Birth attendant"
+            android:textColor="@color/grey"
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/divider_dialog11"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/textDialog211"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/divider" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/medical_officer_dialog213"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_below="@id/birth_attendant_dialog"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/btn_manage_user_medical_officer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Manage Users"
+            android:textAllCaps="true"
+            android:textColor="#0097A7"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

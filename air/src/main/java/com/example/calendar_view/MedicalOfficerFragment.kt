@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.RecyclerView
 import com.example.calendar_view.graphview.ColorTemplate1
 import com.example.calendar_view.room.GraphDAO
 import com.example.calendar_view.room.GraphDatabase
@@ -156,45 +156,49 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
 //            navController.navigate(R.id.action_summaryFragment_to_midWifeFragment)
 //        }
 
-        imageButton = view.findViewById<View>(R.id.switch_img_btn) as ImageButton
-        imageButton!!.setOnClickListener {
+        imageButton = view.findViewById<View>(R.id.switch_img_btn_medical_officer) as ImageButton
+        imageButton?.setOnClickListener {
             // Create custom dialog object
             val dialog = Dialog(this.requireContext())
             // Include dialog.xml file
-            dialog.setContentView(R.layout.dialog)
+            dialog.setContentView(R.layout.dialog2)
             dialog.setTitle("Custom Dialog")
 
             val text = dialog.findViewById<View>(R.id.textDialog) as TextView
-            text.text = "Shushma Kumar"
-            dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
+            text.text = "Savitri Rathod"
+            dialog.window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ActionMenuView.LayoutParams.WRAP_CONTENT
+            )
             dialog.show()
 
-            val relativeLayout1 = dialog.findViewById<View>(R.id.rel111) as RelativeLayout
+            val relativeLayout1 =
+                dialog.findViewById<View>(R.id.birth_attendant_dialog) as RelativeLayout
             relativeLayout1.setOnClickListener {
                 Toast.makeText(
                     requireContext(),
                     "You Cannot Switch To Birth Attendant Account",
                     Toast.LENGTH_LONG
                 ).show()
-//                dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
-//                dialog.dismiss()
             }
 
-            val relativeLayout2 = dialog.findViewById<View>(R.id.rel11) as RelativeLayout
+            val relativeLayout2 = dialog.findViewById<View>(R.id.midwife_dialog) as RelativeLayout
             relativeLayout2.setOnClickListener {
-                navController.navigate(R.id.action_medicalOfficerFragment_self) // -> onclick of btn will open any fragment assign
+                navController.navigate(R.id.action_medicalOfficerFragment_to_midWifeFragment) // -> onclick of btn will open any fragment assign
                 dialog.dismiss()
             }
 
-            val relativeLayout3 = dialog.findViewById<View>(R.id.rel1) as RelativeLayout
+            val relativeLayout3 =
+                dialog.findViewById<View>(R.id.medical_officer_dialog) as RelativeLayout
             relativeLayout3.setOnClickListener {
-                navController.navigate(R.id.action_medicalOfficerFragment_to_midWifeFragment)
+                navController.navigate(R.id.action_medicalOfficerFragment_self)
                 dialog.dismiss()
             }
 
-            val manageUserTextview = dialog.findViewById<View>(R.id.btn_manage_user) as TextView
+            val manageUserTextview =
+                dialog.findViewById<View>(R.id.btn_manage_user_medical_officer) as TextView
             manageUserTextview.setOnClickListener {
-                navController.navigate(R.id.action_midWifeFragment_to_manageUserFragment) // -> onclick of btn will open any fragment assign
+                navController.navigate(R.id.action_medicalOfficerFragment_to_manageUserFragment) // -> onclick of btn will open any fragment assign
                 dialog.dismiss()
             }
         }
@@ -204,7 +208,7 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
 //        barChart1 = view.findViewById(R.id.home_frag_chart_ev_duration11) //-> show correct initialization
 //        barChart2 = view.findViewById(R.id.home_frag_chart_ev_duration2)
 
-        //   barChart = view.findViewById(R.id.home_frag_chart_home) //-> show correct initialization
+        barChart = view.findViewById(R.id.home_frag_chart_home) //-> show correct initialization
         getBarEntries()
         barDataSet = BarDataSet(barEntriesArrayList, "First graph")
         barData = BarData(barDataSet)
@@ -212,7 +216,7 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
         home_frag_chart_ev_duration11?.data = barData
         home_frag_chart_ev_duration2?.data = barData
 
-//        barChart1?.data = barData
+        barChart?.data = barData
 //        barChart2?.data = barData
         //  barDataSet?.setColors(*ColorTemplate.MATERIAL_COLORS) ->read only colors ->adding color to our bar data set.
         barDataSet?.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors

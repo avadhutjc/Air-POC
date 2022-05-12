@@ -2,7 +2,6 @@ package com.example.calendar_view
 
 import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -170,7 +169,7 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
             // Create custom dialog object
             val dialog = Dialog(this.requireContext())
             // Include dialog.xml file
-            dialog.setContentView(R.layout.dialog)
+            dialog.setContentView(R.layout.dialog1)
             dialog.setTitle("Custom Dialog")
 
             val text = dialog.findViewById<View>(R.id.textDialog) as TextView
@@ -207,17 +206,17 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
                 navController.navigate(R.id.action_midWifeFragment_to_manageUserFragment) // -> onclick of btn will open any fragment assign
                 dialog.dismiss()
             }
-
         }
 
         chart = view.findViewById(R.id.home_frag_chart_midwife) //-> show correct initialization
         getBarEntries()
         val barDataSet = BarDataSet(barEntriesArrayList, "First graph")
         barData = BarData(barDataSet)
-        barDataSet.valueTextColor = Color.BLUE
-        barDataSet.valueTextSize = 14f
+//        barDataSet.valueTextColor = Color.BLUE
+//        barDataSet.valueTextSize = 14f
         chart?.data = barData
         home_frag_chart_ev_duration11.data = barData
+        home_frag_chart_ev_duration2.data = barData
 
         chart?.getDescription()?.setEnabled(false)
         chart?.setDrawGridBackground(false)
@@ -244,13 +243,13 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
     private fun getBarEntries() {
         barEntriesArrayList = ArrayList<BarEntry>()
 
-   /*     barEntriesArrayList!!.add(BarEntry(1f, 4f))
+        barEntriesArrayList!!.add(BarEntry(1f, 4f))
         barEntriesArrayList!!.add(BarEntry(2f, 6f))
         barEntriesArrayList!!.add(BarEntry(3f, 5f))
         barEntriesArrayList!!.add(BarEntry(4f, 2f))
         barEntriesArrayList!!.add(BarEntry(5f, 4f))
         barEntriesArrayList!!.add(BarEntry(6f, 1f))
-        barEntriesArrayList!!.add(BarEntry(7f, 3f))*/
+        barEntriesArrayList!!.add(BarEntry(7f, 3f))
 
         val pushToEntity1 = GraphEntity(1f, 4f)
         val pushToEntity2 = GraphEntity(2f, 6f)

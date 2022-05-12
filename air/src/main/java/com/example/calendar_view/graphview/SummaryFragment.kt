@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.navigation.NavController
@@ -145,12 +146,12 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
             // Create custom dialog object
             val dialog = Dialog(this.requireContext())
             // Include dialog.xml file
-            dialog.setContentView(R.layout.dialog)
+            dialog.setContentView(R.layout.dialog1)
             dialog.setTitle("Custom Dialog")
 
             val text = dialog.findViewById<View>(R.id.textDialog) as TextView
             text.text = "Shushma Kumar"
-            dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
+            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ActionMenuView.LayoutParams.WRAP_CONTENT)
             dialog.show()
 
             val relativeLayout3 = dialog.findViewById<View>(R.id.rel1) as RelativeLayout
