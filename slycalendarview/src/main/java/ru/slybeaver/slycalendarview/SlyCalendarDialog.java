@@ -7,14 +7,11 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.Calendar;
 import java.util.Date;
-
 import ru.slybeaver.slycalendarview.listeners.DialogCompleteListener;
 
 public class SlyCalendarDialog extends DialogFragment implements DialogCompleteListener {
-
 
     private final SlyCalendarData slyCalendarData = new SlyCalendarData();
     private Callback callback = null;
@@ -65,7 +62,6 @@ public class SlyCalendarDialog extends DialogFragment implements DialogCompleteL
         return slyCalendarData.getSelectedEndDate();
     }
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -87,7 +83,6 @@ public class SlyCalendarDialog extends DialogFragment implements DialogCompleteL
 
         void onDataSelected(Calendar firstDate, Calendar secondDate, int hours, int minutes);
     }
-
 
     public SlyCalendarDialog setBackgroundColor(Integer backgroundColor) {
         slyCalendarData.setBackgroundColor(backgroundColor);
@@ -118,6 +113,4 @@ public class SlyCalendarDialog extends DialogFragment implements DialogCompleteL
         slyCalendarData.setSelectedTextColor(selectedTextColor);
         return this;
     }
-
-
 }

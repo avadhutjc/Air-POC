@@ -6,4 +6,5 @@
     <string name="spinner_title" translatable="false">spinner_title</string>
     <string name="ideal_time_5s"><![CDATA[Ideal time < 5s]]></string>
     <string name="abc">If you delete a user, they will not be able to see their practice sessions.</string>
+    <string name="cancel_button">Cancel Button</string>
 </resources>

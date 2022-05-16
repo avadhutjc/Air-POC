@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ImageButton
 import androidx.cardview.widget.CardView
@@ -20,16 +18,12 @@ import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import kotlinx.android.synthetic.main.fragment_medical_officer.*
-import kotlinx.android.synthetic.main.fragment_mid_wife.*
-import kotlinx.android.synthetic.main.fragment_mid_wife.home_frag_chart_ev_duration11
-import kotlinx.android.synthetic.main.fragment_mid_wife.home_frag_chart_ev_duration2
-import kotlinx.android.synthetic.main.fragment_mid_wife_ev_duration.*
+import kotlinx.android.synthetic.main.fragment_first_ev_mid_wife.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MidWifeEvDurationFragment : Fragment(R.layout.fragment_mid_wife_ev_duration), View.OnClickListener,
+class MedicalOfficerFirstEvFragment : Fragment(R.layout.fragment_medical_officer_first_ev), View.OnClickListener,
     AdapterView.OnItemSelectedListener {
 
     var imageButton: ImageButton? = null
@@ -60,17 +54,16 @@ class MidWifeEvDurationFragment : Fragment(R.layout.fragment_mid_wife_ev_duratio
 
         navController = Navigation.findNavController(view)
 
-        imageButton = view.findViewById<ImageButton>(R.id.btn_clear_midwife_ev_duration)
+        imageButton = view.findViewById<ImageButton>(R.id.btn_clear_medical_first_ev_duration)
         imageButton?.setOnClickListener {
-            navController.navigate(R.id.action_midWifeEvDurationFragment_to_midWifeFragment)
+            navController.navigate(R.id.action_medicalOfficerFirstEvFragment_to_medicalOfficerFragment)
         }
 
-        barChart = view.findViewById(R.id.home_frag_chart_home_evduration) //-> show correct initialization
+        //    barChart = view.findViewById<BarChart>(R.id.chart_in_home_frag) -> show wrong initialization
         getBarEntries()
         barDataSet = BarDataSet(barEntriesArrayList, "First graph")
         barData = BarData(barDataSet)
-        barChart?.data = barData
-
+        home_frag_chart_home_first_time_ev_midwife?.data = barData
 
         //  barDataSet?.setColors(*ColorTemplate.MATERIAL_COLORS) ->read only colors ->adding color to our bar data set.
         barDataSet?.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors
@@ -92,6 +85,8 @@ class MidWifeEvDurationFragment : Fragment(R.layout.fragment_mid_wife_ev_duratio
 
     private fun getBarEntries() {
         barEntriesArrayList = ArrayList<BarEntry>()
+        Log.d("check_bar", "getBarEntries function called")
+
         barEntriesArrayList!!.add(BarEntry(1f, 4f))
         barEntriesArrayList!!.add(BarEntry(2f, 6f))
         barEntriesArrayList!!.add(BarEntry(3f, 5f))

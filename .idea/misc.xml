@@ -58,7 +58,7 @@
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_main2.xml" value="0.2" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_spinner_doing.xml" value="0.24923076923076923" />
-        <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task.xml" value="0.23981481481481481" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/activity_task1.xml" value="0.27625" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/confirm_delete_user_alert_dialog_box.xml" value="0.253125" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/delete_user_alert_dialog_box.xml" value="0.264" />
@@ -70,11 +70,13 @@
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_home.xml" value="0.17159763313609466" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_manage_user.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_medical_officer.xml" value="0.25" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_medical_officer_first_ev.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_medical_officer_practice_session.xml" value="0.23958333333333334" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_mid_wife.xml" value="0.25" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_mid_wife_ev_duration.xml" value="0.264" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_mid_wife_practice_session.xml" value="0.264" />
-        <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_summary.xml" value="0.2" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_summary.xml" value="0.264" />
+        <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_summary_practice_session.xml" value="0.253125" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/fragment_window.xml" value="0.2323076923076923" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/graph_item_layout.xml" value="0.2" />
         <entry key="..\:/Calendar_View/air/src/main/res/layout/graph_layout.xml" value="0.17395833333333333" />
@@ -86,6 +88,9 @@
         <entry key="..\:/Calendar_View/app/src/main/res/layout/activity_main.xml" value="0.1361111111111111" />
         <entry key="..\:/Calendar_View/samplecalendar/src/main/res/layout/activity_main.xml" value="0.536" />
         <entry key="..\:/Calendar_View/samplecalendar/src/main/res/layout/calendar_main.xml" value="0.24923076923076923" />
+        <entry key="..\:/Calendar_View/slycalendarview/src/main/res/layout/slycalendar_calendar.xml" value="0.25" />
+        <entry key="..\:/Calendar_View/slycalendarview/src/main/res/layout/slycalendar_frame.xml" value="0.25" />
+        <entry key="..\:/Calendar_View/slycalendarview/src/main/res/layout/slycalendar_main.xml" value="0.25" />
       </map>
     </option>
   </component>

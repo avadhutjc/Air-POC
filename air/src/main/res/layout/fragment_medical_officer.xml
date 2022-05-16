@@ -368,7 +368,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/card_view_avg_ev_duration2"
+                    android:id="@+id/home_frag_chart_ev_duration2_med_officer"
                     android:layout_width="200dp"
                     android:layout_height="250dp"
                     android:layout_marginStart="10dp"

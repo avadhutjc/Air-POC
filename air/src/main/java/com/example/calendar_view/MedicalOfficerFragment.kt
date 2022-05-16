@@ -151,10 +151,10 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
             navController.navigate(R.id.action_medicalOfficerFragment_to_medicalOfficerPracticeSessionFragment)
         }
 
-//        imageButton1 = view.findViewById(R.id.people_img_btn_summary) as ImageButton
-//        imageButton1!!.setOnClickListener {
-//            navController.navigate(R.id.action_summaryFragment_to_midWifeFragment)
-//        }
+        cardView = view.findViewById<View>(R.id.home_frag_chart_ev_duration2_med_officer) as CardView
+        cardView?.setOnClickListener {
+            navController.navigate(R.id.action_medicalOfficerFragment_to_medicalOfficerFirstEvFragment)
+        }
 
         imageButton = view.findViewById<View>(R.id.switch_img_btn_medical_officer) as ImageButton
         imageButton?.setOnClickListener {
@@ -212,7 +212,7 @@ class MedicalOfficerFragment : Fragment(R.layout.fragment_medical_officer), View
         getBarEntries()
         barDataSet = BarDataSet(barEntriesArrayList, "First graph")
         barData = BarData(barDataSet)
-        home_frag_chart_home?.data = barData
+      //  home_frag_chart_home?.data = barData
         home_frag_chart_ev_duration11?.data = barData
         home_frag_chart_ev_duration2?.data = barData
 

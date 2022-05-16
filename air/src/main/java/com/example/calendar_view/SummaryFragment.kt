@@ -1,4 +1,4 @@
-package com.example.calendar_view.graphview
+package com.example.calendar_view
 
 import android.app.Dialog
 import android.content.Intent
@@ -11,8 +11,7 @@ import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.example.calendar_view.R
-import com.example.calendar_view.SpinnerDoing
+import com.example.calendar_view.graphview.ColorTemplate1
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
@@ -128,8 +127,9 @@ class SummaryFragment : Fragment(R.layout.fragment_summary), View.OnClickListene
             }
         }
 
-        cardView = view.findViewById<View>(R.id.card) as CardView
+        cardView = view.findViewById<View>(R.id.summary_practice_session) as CardView
         cardView!!.setOnClickListener {
+            navController.navigate(R.id.action_summaryFragment_to_summaryPracticeSessionFragment)
         }
 
         cardView = view.findViewById<View>(R.id.card_view_avg_ev_duration) as CardView

@@ -156,7 +156,7 @@
                         android:text="29s"
                         android:textAllCaps="true"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/sub_headline"
