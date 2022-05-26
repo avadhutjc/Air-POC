@@ -24,6 +24,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListener,
     AdapterView.OnItemSelectedListener {
@@ -33,7 +35,7 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
     var cardView: CardView? = null
     lateinit var dao: GraphDAO
     lateinit var database: GraphDatabase
-
+    var context = this
     private var arrayAdapter: ArrayAdapter<String>? = null
 
     private var recyclerView: RecyclerView? = null
@@ -174,9 +176,12 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
 
             val text = dialog.findViewById<View>(R.id.textDialog) as TextView
             text.text = "Shushma Kumar"
-           // dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
+            // dialog.getWindow()?.setLayout(1300, 1400); //Controlling width and height.
             // below this show your dialog box match parent fit to any screen
-            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ActionMenuView.LayoutParams.WRAP_CONTENT)
+            dialog.window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ActionMenuView.LayoutParams.WRAP_CONTENT
+            )
             dialog.show()
 
 
@@ -226,7 +231,7 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
         chart?.setDrawGridBackground(false)
 
         //  barDataSet?.setColors(*ColorTemplate.MATERIAL_COLORS) ->read only colors ->adding color to our bar data set.
-     //   barDataSet.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors
+        //   barDataSet.setColors(*ColorTemplate1.MATERIAL_COLORS1) //read and write only colors
     }
 
     override fun onClick(p0: View?) {
@@ -243,34 +248,44 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
     private fun getBarEntries() {
         barEntriesArrayList = ArrayList<BarEntry>()
 
-        barEntriesArrayList!!.add(BarEntry(1f, 4f))
-        barEntriesArrayList!!.add(BarEntry(2f, 6f))
+/*        barEntriesArrayList!!.add(BarEntry(2f, 6f))
         barEntriesArrayList!!.add(BarEntry(3f, 5f))
         barEntriesArrayList!!.add(BarEntry(4f, 2f))
         barEntriesArrayList!!.add(BarEntry(5f, 4f))
         barEntriesArrayList!!.add(BarEntry(6f, 1f))
-        barEntriesArrayList!!.add(BarEntry(7f, 3f))
+        barEntriesArrayList!!.add(BarEntry(7f, 3f))*/
 
         val pushToEntity1 = GraphEntity(1f, 4f)
-        val pushToEntity2 = GraphEntity(2f, 6f)
+/*        val pushToEntity2 = GraphEntity(2f, 6f)
         val pushToEntity3 = GraphEntity(3f, 5f)
         val pushToEntity4 = GraphEntity(5f, 4f)
         val pushToEntity5 = GraphEntity(6f, 1f)
-        val pushToEntity6 = GraphEntity(7f, 3f)
+        val pushToEntity6 = GraphEntity(7f, 3f)*/
 
-      val temp =  CoroutineScope(Dispatchers.IO).async{
+        val temp = CoroutineScope(Dispatchers.IO).launch {
             dao.register(pushToEntity1)
-            dao.register(pushToEntity2)
+
+/*            dao.register(pushToEntity2)
             dao.register(pushToEntity3)
             dao.register(pushToEntity4)
             dao.register(pushToEntity5)
-            dao.register(pushToEntity6)
+            dao.register(pushToEntity6)*/
         }
+        barEntriesArrayList!!.add(BarEntry(1f, 4f))
 
+        dao.getUser().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            barEntriesArrayList!!.add(BarEntry(1f, 4f))
+            barEntriesArrayList!!.add(BarEntry(3f, 5f))
+            barEntriesArrayList!!.add(BarEntry(4f, 2f))
+            barEntriesArrayList!!.add(BarEntry(5f, 4f))
+            Log.d("getBar", Thread.currentThread().toString())
+        })
+/*
         CoroutineScope(Dispatchers.IO).launch {
             val pointsOnGraph = dao.getUser()
 
             CoroutineScope(Dispatchers.Main).launch {
+
                 pointsOnGraph.forEach {
                     barEntriesArrayList!!.add(BarEntry(it.xPoints, it.yPoints))
                     Log.d("check_graph_forx", it.xPoints.toString())
@@ -278,6 +293,7 @@ class MidWifeFragment : Fragment(R.layout.fragment_mid_wife), View.OnClickListen
                 }
             }
         }
+*/
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {

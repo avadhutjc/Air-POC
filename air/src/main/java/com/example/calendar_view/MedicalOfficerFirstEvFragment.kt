@@ -101,6 +101,7 @@ class MedicalOfficerFirstEvFragment : Fragment(R.layout.fragment_medical_officer
             dao.register(pushToEntity1)
         }
 
+/*
         CoroutineScope(Dispatchers.IO).launch {
             val pointsOnGraph = dao.getUser()
 
@@ -112,6 +113,7 @@ class MedicalOfficerFirstEvFragment : Fragment(R.layout.fragment_medical_officer
                 }
             }
         }
+*/
 
     }
 

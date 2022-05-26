@@ -123,6 +123,7 @@ class MidWifePracticeSessionFragment : Fragment(R.layout.fragment_mid_wife_pract
             dao.register(pushToEntity1)
         }
 
+/*
         CoroutineScope(Dispatchers.IO).launch {
             val pointsOnGraph = dao.getUser()
 
@@ -134,6 +135,7 @@ class MidWifePracticeSessionFragment : Fragment(R.layout.fragment_mid_wife_pract
                 }
             }
         }
+*/
 
     }
 

@@ -106,6 +106,7 @@ class MidWifeEvDurationFragment : Fragment(R.layout.fragment_mid_wife_ev_duratio
             dao.register(pushToEntity1)
         }
 
+/*
         CoroutineScope(Dispatchers.IO).launch {
             val pointsOnGraph = dao.getUser()
 
@@ -117,6 +118,7 @@ class MidWifeEvDurationFragment : Fragment(R.layout.fragment_mid_wife_ev_duratio
                 }
             }
         }
+*/
 
     }
 

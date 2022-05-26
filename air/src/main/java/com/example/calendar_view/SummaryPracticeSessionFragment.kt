@@ -100,6 +100,7 @@ class SummaryPracticeSessionFragment : Fragment(R.layout.fragment_summary_practi
             dao.register(pushToEntity1)
         }
 
+/*
         CoroutineScope(Dispatchers.IO).launch {
             val pointsOnGraph = dao.getUser()
 
@@ -111,6 +112,7 @@ class SummaryPracticeSessionFragment : Fragment(R.layout.fragment_summary_practi
                 }
             }
         }
+*/
 
     }
 

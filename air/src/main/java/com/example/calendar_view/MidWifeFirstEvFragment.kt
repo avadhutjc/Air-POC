@@ -104,6 +104,7 @@ class MidWifeFirstEvFragment : Fragment(R.layout.fragment_first_ev_mid_wife), Vi
             dao.register(pushToEntity1)
         }
 
+/*
         CoroutineScope(Dispatchers.IO).launch {
             val pointsOnGraph = dao.getUser()
 
@@ -115,6 +116,7 @@ class MidWifeFirstEvFragment : Fragment(R.layout.fragment_first_ev_mid_wife), Vi
                 }
             }
         }
+*/
 
     }
 
