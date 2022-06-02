@@ -13,7 +13,7 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "Calendar_View"
+rootProject.name = "Air Repository"
 include ':air'
 include ':samplecalendar'
 include ':slycalendarview'
